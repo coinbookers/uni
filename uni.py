@@ -110,4 +110,23 @@ def main():
 
     manager = InteractionManager()
 
-    requ
+    request = manager.prepare()
+
+    logging.info(
+        "Prepared interaction request"
+    )
+
+    print(
+        Serializer.encode(
+            request
+        )
+    )
+
+    print()
+    print("Protocol:", manager.info.protocol)
+    print("Network:", manager.config.name)
+
+
+if __name__ == "__main__":
+    main()
+```
